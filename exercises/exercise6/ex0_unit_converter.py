@@ -6,4 +6,6 @@ class UnitConverter:
 
 unit_converter = UnitConverter(5)
 
-print(unit_converter.value)
+# shortcut to get this output: 
+# unit_converter.value = 5 
+print(f"{unit_converter.value = }")
