@@ -3,8 +3,7 @@ from utils import validate_positive_number
 
 
 class UnitConverter:
-    # | means or
-    def __init__(self, value: int | float):
+    def __init__(self, value: Number):
         self.value = value
 
     @property
@@ -17,6 +16,12 @@ class UnitConverter:
         validate_positive_number(new_value)
 
         self._value = new_value
+
+    def inch_to_cm(self):
+        return 2.54 * self.value
+
+    def foot_to_meters(self):
+        return .3048 * self.value
 
 
 unit_converter = UnitConverter(5)
@@ -35,3 +40,4 @@ try:
 except ValueError as err:
     print(err)
 
+print(f"{unit_converter.foot_to_meters() = }")
