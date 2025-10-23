@@ -20,6 +20,7 @@ class UnitConverter:
     @value.setter
     def value(self, new_value):
         # validation code
+        validate_positive_number(new_value)
 
         self._value = new_value
 
