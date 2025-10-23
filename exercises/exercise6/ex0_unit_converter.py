@@ -1,5 +1,12 @@
 from numbers import Number
 
+def validate_positive_number(value) -> None:
+    if not isinstance(value, Number):
+        raise TypeError(f"the value must be a Number not a {type(value)}")
+
+    if value < 0:
+        raise ValueError(f"value can't be negative, not {value}")
+
 
 class UnitConverter:
     # | means or
@@ -13,11 +20,6 @@ class UnitConverter:
     @value.setter
     def value(self, new_value):
         # validation code
-        if not isinstance(new_value, Number):
-            raise TypeError(f"the value must be a Number not a {type(new_value)}")
-
-        if new_value < 0:
-            raise ValueError(f"value must be larger than 0 not {new_value}")
 
         self._value = new_value
 
@@ -32,3 +34,9 @@ try:
     unit_converter.value = "5"
 except TypeError as err:
     print(err)
+
+try:
+    unit_converter.value = -5
+except ValueError as err:
+    print(err)
+
