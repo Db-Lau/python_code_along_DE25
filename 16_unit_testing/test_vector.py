@@ -1,5 +1,6 @@
-from pytest import raises
+from pytest import raises, approx
 from vector import Vector
+import math
 
 
 def test_valid_init():
@@ -32,7 +33,11 @@ def test_different_lengths():
 
 
 # test abs() function
+def test_vector_norm_valid():
+    v = Vector(1,4)
+    expected_norm = math.sqrt(v[0]**2 + v[1]**2)
 
+    assert abs(v) == approx(expected_norm)
 
 def test_empty_vector_fail():
     with raises(ValueError):
