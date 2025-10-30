@@ -1,23 +1,33 @@
+import numbers
+
 class Triangle:
     # x and y optional
     def __init__(self, base, height):
-        pass
+        self.base = base 
+        self.height = height
 
     @property
     def base(self):
-        pass
+        return self._base
     
     @base.setter
-    def base(self):
-        pass
+    def base(self, value):
+        if not isinstance(value, numbers.Number):
+            raise TypeError("must be a number")
+        
+        if value <= 0:
+            raise ValueError("base must be larger than zero")
+        self._base = value
 
     @property
     def height(self):
-        pass
+        return self._height
 
     @height.setter
-    def height(self):
-        pass
+    def height(self, value):
+        if not isinstance(value, numbers.Number):
+            raise TypeError("must be a number")
+        self._height = value
 
     @property
     def area(self):
