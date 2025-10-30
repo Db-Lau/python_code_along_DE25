@@ -1,5 +1,5 @@
-import numbers
 from utils import validate_number
+
 
 class Triangle:
     # x and y optional
@@ -13,7 +13,6 @@ class Triangle:
 
     @base.setter
     def base(self, value):
-        
         validate_number(value)
 
         if value <= 0:
