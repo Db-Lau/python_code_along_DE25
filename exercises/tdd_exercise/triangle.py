@@ -1,7 +1,3 @@
-def validate_triangle(self):
-    pass
-
-
 class Triangle:
     def __init__(self):
         pass
@@ -26,9 +22,9 @@ class Triangle:
     def area(self):
         pass  
 
-    @property
-    def perimeter(self):
-        pass  
+    # @property
+    # def perimeter(self):
+    #     pass  
 
     def __eq__(self, other):
         pass
