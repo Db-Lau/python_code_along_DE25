@@ -1,5 +1,6 @@
 class Triangle:
-    def __init__(self):
+    # x and y optional
+    def __init__(self, base, height):
         pass
 
     @property
